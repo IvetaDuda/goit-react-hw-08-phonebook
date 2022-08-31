@@ -40,38 +40,3 @@ const ContactList = () => {
 };
 
 export default ContactList;
-
-// const { token } = useSelector(state => state.contacts);
-// console.log(token);
-
-// const { data: contacts, error, isLoading } = useGetContactsQuery();
-// console.log(contacts);
-
-// const filter = useSelector(getFilter);
-
-// const filterContacts = () => {
-//   return (
-//     contacts &&
-//     contacts.filter(({ name }) =>
-//       name.toLowerCase().includes(filter.toLowerCase())
-//     )
-//   );
-// };
-
-// const contactList = filterContacts();
-// console.log('contactList', contactList);
-
-// const renderContacts = contacts && !isLoading && contactList.length > 0;
-// const errorMessage = error && error.originalStatus === 404;
-
-// return (
-//   <List>
-//     {renderContacts &&
-//       contactList.map(contact => (
-//         <ContactsElementList key={contact.id} {...contact} />
-//       ))}
-//     {isLoading && <Spinner />}
-//     {errorMessage && <Error> Not Found!</Error>}
-//   </List>
-// );
-// };

@@ -1,6 +1,6 @@
 import {
   useDeleteContactMutation,
-  usePatchContactMutation,
+  // usePatchContactMutation,
 } from 'redux/contactsApi';
 import { Contacts, Button } from './ContactsElementList.styled';
 import { RotatingLines } from 'react-loader-spinner';
@@ -8,7 +8,7 @@ import Delete from '../../image/deleted.svg';
 
 const ContactsElementList = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
-  const [patchContact] = usePatchContactMutation();
+  // const [patchContact] = usePatchContactMutation();
   return (
     <Contacts>
       <div>

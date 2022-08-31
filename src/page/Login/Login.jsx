@@ -9,11 +9,11 @@ import {
   Input,
   Button,
   Container,
-  Title,
+  // Title,
   Span,
   Error,
   Img,
-  ImgBox,
+  // ImgBox,
   StyledLink,
   SignIn,
 } from './Login.styled';

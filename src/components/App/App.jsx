@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-import { Container } from './App.styled';
 import { useGetCurrentUserQuery } from 'redux/userApi';
 import AppBar from 'components/AppBar/AppBar';
 import { useSelector } from 'react-redux';
@@ -31,7 +30,6 @@ const App = () => {
     <>
       <AppBar />
 
-      {/* <Container> */}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route
@@ -68,7 +66,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      {/* </Container> */}
     </>
   );
 };
