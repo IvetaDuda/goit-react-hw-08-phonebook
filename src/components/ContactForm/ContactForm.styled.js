@@ -8,7 +8,7 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
-  width: 300px;
+  width: 400px;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -21,8 +21,8 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 300px;
-  height: 20px;
+  width: 400px;
+  height: 25px;
   border-color: transparent;
   border-radius: 3px;
   margin-bottom: 20px;
@@ -33,8 +33,8 @@ export const Input = styled.input`
   }
 `;
 export const Button = styled.button`
-  width: 308px;
-  height: 28px;
+  width: 408px;
+  height: 32px;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.03em;

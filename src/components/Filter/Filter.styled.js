@@ -4,6 +4,7 @@ export const FilterDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 `;
 export const Label = styled.label`
   font-size: 18px;
@@ -14,13 +15,14 @@ export const Label = styled.label`
   color: #232323;
 `;
 export const Input = styled.input`
-  width: 400px;
+  width: 500px;
   height: 20px;
   outline: none;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  /* padding: 8px; */
   border-color: transparent;
   border-radius: 3px;
   &:hover,

@@ -14,15 +14,12 @@ export const Contacts = styled.li`
 export const Button = styled.button`
   cursor: pointer;
   border-color: transparent;
+  background-color: transparent;
   outline: none;
-  border-radius: 3px;
-  background-color: #f27b77;
-  color: #ffffff;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 60px;
   &:hover,
   &:focus {
-    background-color: #ffffff;
-    color: #232323;
-    border-color: transparent;
+    transform: scale(1.1);
   }
 `;
