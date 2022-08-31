@@ -1,30 +1,29 @@
 import {
   Container,
   Title,
-  Text,
   StyledLink,
-  Item,
-  LinkBox,
-  // OpenArms,
+  Man,
+  Woman,
+  Hi,
+  Answer,
 } from './HomeLogedIn.styled';
-import phoneCall from '../../../image/phoneCall.png';
-// import openArmsMan from '../../../image/OpenArmsMan.png';
+import man from '../../../image/man.png';
+import woman from '../../../image/woman.png';
 
 const HomeLogedIn = () => {
   return (
     <Container>
-      <img src={phoneCall} alt="phoneCall" width="100" />
-
-      {/* <OpenArms src={openArmsMan} alt="openArmsMan" width="400px" /> */}
-      <Title>PhoneBook</Title>
-      <Text>Congratulations!</Text>
-      <Item>
-        To view or add a contact list
-        <LinkBox>
-          <StyledLink to={`/Login`}>Login</StyledLink> or &nbsp;
-          <StyledLink to={`/register`}>Sign Up</StyledLink>
-        </LinkBox>
-      </Item>
+      <Man src={man} alt="man" width="550px" />
+      <Hi>
+        Привіт! Ти вже чув про наш новий додаток <Title>Phonebook</Title>?
+      </Hi>
+      <Woman src={woman} alt="woman" width="500px" />
+      <Answer>
+        Щоб перейти до списку контактів
+        <StyledLink to={`/Login`}>увійди </StyledLink> до свого аккаунту.
+        <br /> Якщо и ще не з нами, можеш
+        <StyledLink to={`/register`}>зареєструйся</StyledLink> тут.
+      </Answer>
     </Container>
   );
 };

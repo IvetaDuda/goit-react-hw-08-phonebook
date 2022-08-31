@@ -6,7 +6,7 @@ import { Container, Img, Text, Item, Btn } from './Logout.styled';
 
 const Logout = () => {
   const { name } = useSelector(state => state.users);
-  const [GetLogout, status] = useGetLogoutMutation();
+  const [GetLogout] = useGetLogoutMutation();
 
   const handleLogoutClick = () => {
     GetLogout();

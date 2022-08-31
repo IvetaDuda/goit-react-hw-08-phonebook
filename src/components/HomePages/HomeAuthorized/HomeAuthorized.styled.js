@@ -36,14 +36,6 @@ export const Text = styled.span`
 `;
 export const StyledLink = styled(NavLink)`
   font-size: 72px;
-  /* background: linear-gradient(
-    90deg,
-    rgba(125, 70, 128, 1) 11%,
-    rgba(58, 106, 103, 1) 81%
-  ); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
   font-weight: 500;
   text-decoration: none;
   margin-top: 20px;
