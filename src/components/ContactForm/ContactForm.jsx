@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { useCreateContactMutation, useGetContactsQuery } from 'redux/contacts';
+import {
+  useCreateContactMutation,
+  useGetContactsQuery,
+} from 'redux/contactsApi';
 import { toast } from 'react-toastify';
 
 import { nanoid } from 'nanoid';
