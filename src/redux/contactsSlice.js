@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { contactsApi } from './contactsApi';
 
 export const filterSlice = createSlice({
   name: 'filter',
@@ -9,22 +8,11 @@ export const filterSlice = createSlice({
       state.value = action.payload;
     },
   },
-  extraReducers: builder => {
-    builder.addMatcher(
-      contactsApi.endpoints.patchContact.matchFulfilled,
-      (state, { payload }) => {
-        state.value = state.value.map(contact => {
-          console.log(payload);
-          return contact.id === payload.id ? payload : contact;
-        });
-      }
-    );
-  },
 });
 
 export const ReducerFilter = filterSlice.reducer;
 
-export const { changeFilter } = filterSlice.actions;
+export const { changeFilter, changeContacts } = filterSlice.actions;
 
 ///Selectors///
 

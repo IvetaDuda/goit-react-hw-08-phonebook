@@ -42,7 +42,7 @@ const Login = () => {
 
   return (
     <Container>
-      <Img src={man} alt="man" width="450" />
+      <Img src={man} alt="man" width="500" />
 
       <SignIn>Sign In</SignIn>
       <Form autoCapitalize="off" onSubmit={hendleSubmit}>

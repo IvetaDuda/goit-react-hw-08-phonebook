@@ -4,11 +4,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
 `;
 
 export const Label = styled.label`
-  width: 400px;
+  width: 350px;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -21,25 +20,21 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 400px;
+  width: 350px;
   height: 25px;
   border-color: transparent;
   border-radius: 3px;
   margin-bottom: 20px;
   outline: none;
-  &:hover,
-  &:focus {
-    box-shadow: 0px 0px 9px 3px rgba(242, 123, 119, 0.4);
-  }
 `;
 export const Button = styled.button`
-  width: 408px;
+  width: 358px;
   height: 32px;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  background-color: #f27b77;
+  background-color: #232323;
   color: #ffffff;
   border-color: transparent;
   border-radius: 3px;

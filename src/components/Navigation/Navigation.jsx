@@ -1,12 +1,17 @@
 import { Nav, StyleLink, Image } from './Navigatin.styled';
-import phoneCall from '../../image/phoneCall.png';
+import phoneCall from '../../image/phoneCall.svg';
+import { useSelector } from 'react-redux';
 
 const Navigation = () => {
+  const { isLoggedIn } = useSelector(state => state.users);
   return (
     <Nav>
-      <Image src={phoneCall} alt="phoneCall" width={35} />
-      <StyleLink to="/">Home</StyleLink>
-      <StyleLink to="/contacts">Contacts</StyleLink>
+      <Image src={phoneCall} alt="phoneCall" width={40} />
+      {!isLoggedIn ? (
+        <StyleLink to="/">Home</StyleLink>
+      ) : (
+        <StyleLink to="/contacts">Phonebook</StyleLink>
+      )}
     </Nav>
   );
 };

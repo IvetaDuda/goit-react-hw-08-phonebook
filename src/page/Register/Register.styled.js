@@ -18,7 +18,7 @@ export const Title = styled.h1`
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 10px;
-  color: #232323;
+  color: #ffffff;
 `;
 export const SignUp = styled.h2`
   width: 250px;
@@ -28,7 +28,7 @@ export const SignUp = styled.h2`
   letter-spacing: 0.03em;
   text-align: center;
   margin-bottom: 20px;
-  color: #232323;
+  color: #ffffff;
 `;
 
 export const Form = styled.form`
@@ -43,7 +43,7 @@ export const Label = styled.label`
   flex-direction: column;
   cursor: pointer;
   outline: none;
-  color: #232323;
+  color: #ffffff;
   margin-bottom: 20px;
 `;
 
@@ -60,12 +60,9 @@ export const Input = styled.input`
   padding: 10px;
   border-color: #605960;
   border-radius: 3px;
+  border-color: transparent;
   outline: none;
-  background-color: transparent;
-  &:hover,
-  &:focus {
-    /* box-shadow: 0px 0px 9px 3px rgba(242, 123, 119, 0.4); */
-  }
+  background-color: #ffffff;
   &:not(:last-child) {
     margin-bottom: 8px;
   }
@@ -96,7 +93,7 @@ export const Button = styled.button`
   &:focus {
     background-color: transparent;
     transform: scale(1.3);
-    color: #232323;
+    color: #ffffff;
   }
 `;
 

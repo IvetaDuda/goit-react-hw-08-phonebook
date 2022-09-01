@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
+  height: 200px;
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 0px 70px 0 70px;
+  padding: 0px 20px;
+  overflow: auto;
 `;
 export const Error = styled.h2`
   font-size: 24px;

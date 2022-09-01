@@ -10,15 +10,14 @@ export const StyleLink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
-  color: #232323;
+  color: #ffffff;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:not(:last-child) {
     margin-right: 20px;
   }
   &:hover,
-  &:focus,
-  &:active {
-    color: #c22cc7;
-    border-bottom: 2px solid #c22cc7;
+  &:focus {
+    transform: scale(1.1);
   }
 `;
 export const Image = styled.img`

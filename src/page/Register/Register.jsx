@@ -3,7 +3,6 @@ import { useGetSignupMutation } from 'redux/userApi';
 import Woman from '../../image/woman.png';
 import {
   Container,
-  // Title,
   Form,
   Label,
   Input,

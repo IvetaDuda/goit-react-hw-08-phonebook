@@ -5,6 +5,7 @@ export const FilterDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
+  z-index: 2;
 `;
 export const Label = styled.label`
   font-size: 18px;
@@ -15,18 +16,13 @@ export const Label = styled.label`
   color: #232323;
 `;
 export const Input = styled.input`
-  width: 500px;
+  width: 450px;
   height: 20px;
   outline: none;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  /* padding: 8px; */
   border-color: transparent;
   border-radius: 3px;
-  &:hover,
-  &:focus {
-    box-shadow: 0px 0px 9px 3px rgba(242, 123, 119, 0.4);
-  }
 `;

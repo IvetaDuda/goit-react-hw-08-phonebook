@@ -33,7 +33,7 @@ export const SignIn = styled.h2`
   letter-spacing: 0.03em;
   text-align: center;
   margin-bottom: 20px;
-  color: #232323;
+  color: #ffffff;
 `;
 export const Form = styled.form`
   width: 450px;
@@ -47,7 +47,7 @@ export const Label = styled.label`
   flex-direction: column;
   cursor: pointer;
   outline: none;
-  color: #232323;
+  color: #ffffff;
   margin-bottom: 20px;
 `;
 
@@ -64,8 +64,9 @@ export const Input = styled.input`
   padding: 10px;
   border-color: #605960;
   border-radius: 3px;
+  border-color: transparent;
   outline: none;
-  background-color: transparent;
+  background-color: #ffffff;
   &:not(:last-child) {
     margin-bottom: 8px;
   }
@@ -99,7 +100,7 @@ export const Button = styled.button`
   &:focus {
     background-color: transparent;
     transform: scale(1.7);
-    color: #232323;
+    color: #ffffff;
   }
 `;
 
@@ -109,7 +110,7 @@ export const StyledLink = styled(NavLink)`
   justify-content: flex-end;
   margin-top: 20px;
   margin-right: 10px;
-  color: #232323;
+  color: #ffffff;
   &:hover,
   &:focus {
     color: #c22cc7;
@@ -118,7 +119,7 @@ export const StyledLink = styled(NavLink)`
 
 export const Img = styled.img`
   position: absolute;
-  top: -100px;
-  left: -200px;
+  top: -110px;
+  left: -220px;
   z-index: -1;
 `;
