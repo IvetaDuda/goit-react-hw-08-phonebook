@@ -56,7 +56,3 @@ export const userSlice = createSlice({
 export const ReducerUser = userSlice.reducer;
 
 export const { getCurrentLogin, getLogin } = userSlice.actions;
-
-///Selectors///
-
-// export const getUser = state => state.user.value;

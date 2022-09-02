@@ -26,10 +26,11 @@ export const Input = styled.input`
   border-radius: 3px;
   margin-bottom: 20px;
   outline: none;
+  padding: 5px;
 `;
 export const Button = styled.button`
-  width: 358px;
-  height: 32px;
+  width: 362px;
+  height: 39px;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.03em;
