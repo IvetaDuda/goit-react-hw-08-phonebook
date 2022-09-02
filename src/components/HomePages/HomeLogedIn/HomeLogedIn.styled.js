@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 1400px;
-  height: 100%;
-  margin: 0px auto;
-  place-items: center;
+  height: 100vh;
+  position: relative;
+  margin: 0px auto 0px auto;
   font: 2vw system-ui;
 `;
 export const H1 = styled.h1`
@@ -20,23 +20,20 @@ export const H1 = styled.h1`
   clip-path: inset(50%);
   margin: -1px;
 `;
-
-export const Man = styled.img`
+export const ManContainer = styled.div`
   position: absolute;
-  bottom: 0px;
-  left: 80px;
-  z-index: -1;
+  bottom: 0;
+  left: 0;
 `;
-export const Woman = styled.img`
+export const WomanContainer = styled.div`
   position: absolute;
   bottom: 0px;
-  right: 80px;
-  z-index: -1;
+  right: 0px;
 `;
 
 export const Hi = styled.div`
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 300px;
   width: 300px;
   transform: translatey(0px);
@@ -44,7 +41,8 @@ export const Hi = styled.div`
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 0.3em;
+  line-height: 1.62;
   font-size: 14px;
   color: #774f38;
   background-color: #ece5ce;
@@ -52,7 +50,7 @@ export const Hi = styled.div`
   border-radius: 11px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
-  font-family: 'Baloo 2', cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   &:after {
     transform: translatey(0px);
     animation: float2 5s ease-in-out infinite;
@@ -109,12 +107,11 @@ export const Hi = styled.div`
 
 export const Answer = styled.div`
   position: absolute;
-  top: -50px;
-  right: -750px;
+  top: 150px;
+  right: 150px;
   width: 320px;
   transform: translatey(0px);
   animation: floats 5s ease-in-out infinite;
-  /* mix-blend-mode: multiply; */
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -127,7 +124,7 @@ export const Answer = styled.div`
   border-radius: 11px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
-  font-family: 'Baloo 2', cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   &:after {
     transform: translatey(0px);
     animation: floats2 5s ease-in-out infinite;
@@ -185,17 +182,18 @@ export const Answer = styled.div`
 export const Title = styled.h1`
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.1em;
+  line-height: 1.72;
   color: #232323;
 `;
 
 export const StyledLink = styled(NavLink)`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
+  letter-spacing: 0.2em;
   line-height: 1.62;
-  letter-spacing: 0.03em;
-  color: #c22cc7;
+  color: #ecb10a;
   text-decoration: none;
   text-transform: uppercase;
-  border-bottom: 2px solid #c22cc7;
+  border-bottom: 2px solid #ecb10a;
 `;

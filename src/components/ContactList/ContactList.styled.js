@@ -7,6 +7,29 @@ export const List = styled.ul`
   flex-direction: column;
   padding: 0px 20px;
   overflow: auto;
+  &::-webkit-scrollbar-button {
+    background-image: url(&#39;&#39;);
+    background-repeat: no-repeat;
+    width: 5px;
+    height: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 3px;
+    background-color: #ababa9;
+  }
+
+  &::-webkit-resizer {
+    background-image: url(&#39;&#39;);
+    background-repeat: no-repeat;
+    width: 4px;
+    height: 0px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
 `;
 export const Error = styled.h2`
   font-size: 24px;

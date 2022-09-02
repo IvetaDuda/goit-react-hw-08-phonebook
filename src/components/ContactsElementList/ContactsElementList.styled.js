@@ -52,8 +52,8 @@ export const ChangeBox = styled.div`
   display: flex;
 `;
 export const Input = styled.input`
-  width: 150px;
-  height: 20px;
+  width: 160px;
+  height: 30px;
   background-color: #ffffff;
   border-color: transparent;
   outline: none;

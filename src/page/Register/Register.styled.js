@@ -1,27 +1,21 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
+  width: 1400px;
+  height: 100%;
+  padding: 20px;
+  margin: 0 auto;
+`;
+export const RegisterContainer = styled.div`
   position: relative;
-  width: 600px;
   display: flex;
   flex-direction: column;
-  margin: 30px auto;
   align-items: center;
-  padding: 20px 20px 70px 20px;
 `;
 
-export const Title = styled.h1`
-  font-size: 42px;
-  font-weight: 500;
-  line-height: 1.62;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #ffffff;
-`;
 export const SignUp = styled.h2`
-  width: 250px;
+  width: 100%;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.62;
@@ -32,6 +26,9 @@ export const SignUp = styled.h2`
 `;
 
 export const Form = styled.form`
+  position: absolute;
+  top: 160px;
+  left: 480px;
   width: 450px;
   display: flex;
   flex-direction: column;
@@ -99,7 +96,17 @@ export const Button = styled.button`
 
 export const Img = styled.img`
   position: absolute;
-  top: -80px;
-  right: -150px;
+  top: 80px;
+  right: 160px;
   z-index: -1;
+`;
+export const StyledLink = styled(NavLink)`
+  font-size: 22px;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: #ffffff;
+  &:hover,
+  &:focus {
+    color: #c22cc7;
+  }
 `;

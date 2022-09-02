@@ -2,12 +2,24 @@ import styled from 'styled-components';
 import Background from '../../image/background.jpg';
 
 export const Container = styled.div`
+  position: relative;
   width: 1400px;
   height: 100%;
-  padding: 30px 20px;
-  margin: 0px auto;
+  margin: 0 auto;
+`;
+export const Div = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 175px;
+  width: 1000px;
+  height: 500px;
   display: flex;
-  align-items: center;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url(${Background});
+  background-position: center;
+  background-size: cover;
 `;
 export const Title = styled.h1`
   font-size: 28px;
@@ -28,17 +40,6 @@ export const SubTitle = styled.h2`
   text-align: center;
   margin-bottom: 20px;
   color: #232323;
-`;
-export const Div = styled.div`
-  width: 1000px;
-  height: 500px;
-  display: flex;
-  border-radius: 5px;
-  margin: 0 auto;
-  padding: 20px;
-  background-image: url(${Background});
-  background-position: center;
-  background-size: cover;
 `;
 
 export const Form = styled.div`

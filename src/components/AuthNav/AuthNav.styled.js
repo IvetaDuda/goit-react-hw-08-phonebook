@@ -17,7 +17,8 @@ export const StyleLink = styled(NavLink)`
   &:hover,
   &:focus,
   &:active {
+    color: #e87825;
     transform: scale(1.1);
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #e87825;
   }
 `;

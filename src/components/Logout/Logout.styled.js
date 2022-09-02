@@ -17,7 +17,8 @@ export const Text = styled.span`
 export const Item = styled.span`
   font-size: 20px;
   font-style: italic;
-  border-bottom: 2px solid #ffffff;
+  color: #64b7b2;
+  border-bottom: 2px solid #64b7b2;
 `;
 export const Btn = styled.button`
   cursor: pointer;

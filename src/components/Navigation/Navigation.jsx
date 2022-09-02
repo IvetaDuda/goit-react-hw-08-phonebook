@@ -1,4 +1,4 @@
-import { Nav, StyleLink, Image } from './Navigatin.styled';
+import { Nav, StyleLink, StyleLinkC, Image } from './Navigatin.styled';
 import phoneCall from '../../image/phoneCall.svg';
 import { useSelector } from 'react-redux';
 
@@ -10,7 +10,7 @@ const Navigation = () => {
       {!isLoggedIn ? (
         <StyleLink to="/">Home</StyleLink>
       ) : (
-        <StyleLink to="/contacts">Phonebook</StyleLink>
+        <StyleLinkC to="/contacts">Phonebook</StyleLinkC>
       )}
     </Nav>
   );

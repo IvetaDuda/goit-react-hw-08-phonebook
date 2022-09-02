@@ -9,13 +9,12 @@ import {
   Input,
   Button,
   Container,
-  // Title,
   Span,
   Error,
   Img,
-  // ImgBox,
   StyledLink,
   SignIn,
+  LoginContainer,
 } from './Login.styled';
 
 const Login = () => {
@@ -32,9 +31,11 @@ const Login = () => {
     e.preventDefault();
     const credentials = { email, password };
 
-    getUserLogin(credentials).then(({ data }) => {
-      dispatch(getLogin(data));
-    });
+    getUserLogin(credentials)
+      .then(({ data }) => {
+        dispatch(getLogin(data));
+      })
+      .catch(error => error.message);
 
     setEmail('');
     setPassoword('');
@@ -42,38 +43,38 @@ const Login = () => {
 
   return (
     <Container>
-      <Img src={man} alt="man" width="500" />
+      <LoginContainer>
+        <Img src={man} alt="man" width="500" />
 
-      <SignIn>Sign In</SignIn>
-      <Form autoCapitalize="off" onSubmit={hendleSubmit}>
-        <Label name="email">
-          <Span>Email</Span>
-          <Input
-            type="email"
-            name="email"
-            value={email}
-            onChange={hendleChangeLogin}
-            required
-          />
-        </Label>
-
-        <Label name="password">
-          <Span>Password</Span>
-          <Input
-            type="password"
-            name="password"
-            value={password}
-            onChange={hendleChangePassword}
-            required
-          />
-        </Label>
-        {status.isError === true && (
-          <Error>Oops...Invalid authorization, please try again</Error>
-        )}
-
-        <Button type="submit">Login</Button>
-        <StyledLink to="/register">Sign Up</StyledLink>
-      </Form>
+        <Form autoCapitalize="off" onSubmit={hendleSubmit}>
+          <SignIn>Sign In</SignIn>
+          <Label name="email">
+            <Span>Email</Span>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={hendleChangeLogin}
+              required
+            />
+          </Label>
+          <Label name="password">
+            <Span>Password</Span>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={hendleChangePassword}
+              required
+            />
+          </Label>
+          {status.isError === true && (
+            <Error>Oops...Invalid authorization, please try again</Error>
+          )}
+          <Button type="submit">Login</Button>
+          <StyledLink to="/register">Sign Up</StyledLink>
+        </Form>
+      </LoginContainer>
     </Container>
   );
 };

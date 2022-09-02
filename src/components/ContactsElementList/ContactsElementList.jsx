@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import {
   useDeleteContactMutation,
   usePatchContactMutation,
 } from 'redux/contactsApi';
+import { RotatingLines } from 'react-loader-spinner';
+import Delete from '../../image/delete.svg';
+import Change from '../../image/change.svg';
+import Send from '../../image/send.svg';
+import Cancel from '../../image/cancel.svg';
 import {
   Contacts,
   Button,
@@ -12,17 +18,11 @@ import {
   ContactBox,
   Number,
 } from './ContactsElementList.styled';
-import { RotatingLines } from 'react-loader-spinner';
-import Delete from '../../image/delete.svg';
-import Change from '../../image/change.svg';
-import Send from '../../image/send.svg';
-import Cancel from '../../image/cancel.svg';
-import { useState } from 'react';
 
 const ContactsElementList = ({ id, name, number }) => {
   const [isUpdate, setIsUpdate] = useState(false);
-  const [contentName, setContentName] = useState('');
-  const [contentNumber, setContentNumber] = useState('');
+  const [contentName, setContentName] = useState(name);
+  const [contentNumber, setContentNumber] = useState(number);
 
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
@@ -53,23 +53,19 @@ const ContactsElementList = ({ id, name, number }) => {
         <ChangeBox>
           <Input
             type="text"
-            placeholder={name}
             value={contentName}
-            autoComplete={name.id}
             onChange={e => setContentName(e.currentTarget.value)}
           />
           <Input
             type="text"
-            placeholder={number}
-            autoComplete={number}
             value={contentNumber}
             onChange={e => setContentNumber(e.currentTarget.value)}
           />
           <ButtonSend type="button" onClick={handleSend}>
-            <img src={Send} alt="send" width="30" />
+            <img src={Send} alt="send" width="20" />
           </ButtonSend>
           <Button type="button" onClick={() => setIsUpdate(false)}>
-            <img src={Cancel} alt="cancel" width="30" />
+            <img src={Cancel} alt="cancel" width="20" />
           </Button>
         </ChangeBox>
       ) : (
@@ -81,14 +77,14 @@ const ContactsElementList = ({ id, name, number }) => {
             {isDeleting ? (
               <RotatingLines strokeColor="#232323" width="12" />
             ) : (
-              <img src={Change} alt="change" width="30" />
+              <img src={Change} alt="change" width="20" />
             )}
           </ButtonChange>
           <Button onClick={() => deleteContact(id)}>
             {isDeleting ? (
               <RotatingLines strokeColor="#232323" width="12" />
             ) : (
-              <img src={Delete} alt="delete" width="40" />
+              <img src={Delete} alt="delete" width="30" />
             )}
           </Button>
         </>
