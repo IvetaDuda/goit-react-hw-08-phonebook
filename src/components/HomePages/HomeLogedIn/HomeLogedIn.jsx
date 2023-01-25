@@ -1,5 +1,4 @@
 import {
-  H1,
   Title,
   Subtitle,
   ManImg,
