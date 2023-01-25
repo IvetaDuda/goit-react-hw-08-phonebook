@@ -1,21 +1,22 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  Container,
+  ContainerContact,
   Title,
   SubTitle,
   Div,
   Contact,
   Form,
 } from './Contacts.stayled';
-
+// import { Container } from '../Container.styled';
 import ContactList from 'components/ContactList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 
 const Contacts = () => {
   return (
-    <Container>
+    // <Container>
+    <ContainerContact>
       <Div>
         <Form>
           <Title>Phonebook</Title>
@@ -28,7 +29,8 @@ const Contacts = () => {
         </Contact>
       </Div>
       <ToastContainer autoClose={3000} />
-    </Container>
+    </ContainerContact>
+    // </Container>
   );
 };
 export default Contacts;

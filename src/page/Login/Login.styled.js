@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const Container = styled.div`
-  width: 1400px;
-  height: 100%;
-  padding: 20px;
-  margin: 0 auto;
-`;
 export const LoginContainer = styled.div`
-  position: relative;
   display: flex;
+  height: 100%;
   flex-direction: column;
-  align-items: center;
+  margin: auto;
+  padding: 0 20px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const SignIn = styled.h2`
@@ -25,13 +23,30 @@ export const SignIn = styled.h2`
   color: #ffffff;
 `;
 export const Form = styled.form`
-  position: absolute;
-  top: 160px;
-  left: 480px;
-  width: 450px;
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: auto;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 1400px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+  }
 `;
 
 export const Label = styled.label`
@@ -110,7 +125,19 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Img = styled.img`
-  position: absolute;
-  top: 10px;
-  left: 140px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 400px;
+    position: absolute;
+    bottom: 50px;
+    left: -250px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: 500px;
+    position: absolute;
+    bottom: 50px;
+    left: -290px;
+  }
 `;

@@ -17,7 +17,7 @@ export const Label = styled.label`
   color: #232323;
 `;
 export const Input = styled.input`
-  width: 465px;
+  width: 100%;
   height: 20px;
   outline: none;
   font-size: 14px;
@@ -26,10 +26,28 @@ export const Input = styled.input`
   text-transform: uppercase;
   border-color: transparent;
   border-radius: 3px;
-  padding: 5px 5px 5px 30px;
+  padding: 5px 0 5px 20px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    padding: 5px 0 5px 30px;
+  }
+  @media screen and (min-width: 1400px) {
+    padding: 5px 5px 5px 30px;
+  }
 `;
 export const Search = styled.img`
+  width: 12px;
   position: absolute;
-  top: 51px;
-  left: 30px;
+  top: 55px;
+  left: -7px;
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    top: 53px;
+    left: -5px;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 16px;
+    top: 51px;
+    left: -10px;
+  }
 `;

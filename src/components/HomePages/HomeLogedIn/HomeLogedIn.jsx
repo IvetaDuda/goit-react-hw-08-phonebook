@@ -1,7 +1,9 @@
 import {
-  Container,
   H1,
   Title,
+  Subtitle,
+  ManImg,
+  WomanImg,
   StyledLink,
   Hi,
   Answer,
@@ -13,14 +15,14 @@ import woman from '../../../image/woman.png';
 
 const HomeLogedIn = () => {
   return (
-    <Container>
-      <H1>Phonebook</H1>
+    <>
+      <Title>Phonebook</Title>
       <ManContainer>
         <Hi>
-          Hi! <br /> Have you heard about our new app?
-          <Title>Phonebook ?</Title>
+          Hi! <br /> Have you heard about our new app,
+          <Subtitle>Phonebook ?</Subtitle>
         </Hi>
-        <img src={man} alt="man" width="550px" />
+        <ManImg src={man} alt="man" />
       </ManContainer>
       <WomanContainer>
         <Answer>
@@ -29,9 +31,9 @@ const HomeLogedIn = () => {
           <br /> If you are not yet with us, you can
           <StyledLink to={`/register`}> register </StyledLink> here.
         </Answer>
-        <img src={woman} alt="woman" width="500px" />
+        <WomanImg src={woman} alt="woman" />
       </WomanContainer>
-    </Container>
+    </>
   );
 };
 export default HomeLogedIn;

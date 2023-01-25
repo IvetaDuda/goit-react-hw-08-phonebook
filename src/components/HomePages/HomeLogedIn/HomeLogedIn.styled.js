@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const Container = styled.div`
-  width: 1400px;
-  height: 100vh;
-  position: relative;
-  margin: 0px auto 0px auto;
-  font: 2vw system-ui;
-`;
-export const H1 = styled.h1`
+export const Title = styled.h1`
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -31,22 +24,36 @@ export const WomanContainer = styled.div`
   right: 0px;
 `;
 
+export const ManImg = styled.img`
+  width: 450px;
+  @media screen and (min-width: 1400px) {
+    width: 550px;
+  }
+`;
+
+export const WomanImg = styled.img`
+  width: 420px;
+  @media screen and (min-width: 1400px) {
+    width: 520px;
+  }
+`;
+
 export const Hi = styled.div`
   position: absolute;
-  top: 100px;
-  left: 300px;
-  width: 300px;
+  top: 15px;
+  left: 20px;
+  width: 160px;
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.3em;
-  line-height: 1.62;
-  font-size: 14px;
+  line-height: 1.5;
+  font-size: 12px;
   color: #774f38;
   background-color: #ece5ce;
-  padding: 20px;
+  padding: 10px;
   border-radius: 11px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
@@ -63,7 +70,7 @@ export const Hi = styled.div`
     text-align: left;
     font-size: 55px;
     width: 55px;
-    height: 11px;
+    height: 8px;
     line-height: 30px;
     border-radius: 11px;
     background-color: #ece5ce;
@@ -103,26 +110,45 @@ export const Hi = styled.div`
       transform: translatey(0px);
     }
   }
+  @media screen and (min-width: 768px) {
+    top: 35px;
+    left: 50px;
+    width: 260px;
+    line-height: 1.62;
+    font-size: 14px;
+    padding: 15px;
+    &:after {
+      height: 11px;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    top: 100px;
+    left: 300px;
+    width: 300px;
+    line-height: 1.62;
+    font-size: 14px;
+    padding: 20px;
+  }
 `;
 
 export const Answer = styled.div`
   position: absolute;
-  top: 150px;
-  right: 150px;
-  width: 320px;
+  top: -120px;
+  right: 30px;
+  width: 200px;
   transform: translatey(0px);
   animation: floats 5s ease-in-out infinite;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.3em;
-  line-height: 1.62;
-  font-size: 14px;
+  line-height: 1.5;
+  font-size: 12px;
   color: #774f38;
   background-color: #ece5ce;
-  padding: 30px;
+  padding: 10px;
   border-radius: 11px;
-  position: relative;
   box-shadow: 20px 20px #83af9b;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   &:after {
@@ -177,23 +203,52 @@ export const Answer = styled.div`
       transform: translatey(0px);
     }
   }
+  @media screen and (min-width: 768px) {
+    top: -130px;
+    right: 50px;
+    width: 300px;
+    line-height: 1.62;
+    font-size: 14px;
+    padding: 15px;
+    &:after {
+      height: 11px;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    top: 150px;
+    right: 150px;
+    width: 320px;
+    padding: 30px;
+    position: relative;
+  }
 `;
 
-export const Title = styled.h1`
-  font-size: 24px;
+export const Subtitle = styled.h1`
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.1em;
-  line-height: 1.72;
+  line-height: 1.5;
   color: #232323;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    line-height: 1.72;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.2em;
-  line-height: 1.62;
+  line-height: 1.5;
   color: #ecb10a;
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 2px solid #ecb10a;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    line-height: 1.62;
+  }
 `;

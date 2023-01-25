@@ -8,6 +8,7 @@ import PrivateRoute from 'components/PrivateRoute';
 import PublicRoute from 'components/PublicRoute';
 import Loader from 'components/Loader';
 import NotFound from 'components/NotFound';
+import { Container } from './Container.styled';
 
 const Home = lazy(() =>
   import('../../page/Home' /* webpackChunkName: "Home" */)
@@ -28,43 +29,46 @@ const App = () => {
 
   return (
     <>
-      <AppBar />
+      {/* <AppBar /> */}
 
       <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PublicRoute redirectPath="/" isLoggedIn={isLoggedIn}>
-                <Home />
-              </PublicRoute>
-            }
-          />
+        <Container>
+          <AppBar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PublicRoute redirectPath="/" isLoggedIn={isLoggedIn}>
+                  <Home />
+                </PublicRoute>
+              }
+            />
 
-          <Route
-            element={
-              <PublicRoute
-                redirectPath="/contacts"
-                isLoggedIn={isLoggedIn}
-                restricted
-              />
-            }
-          >
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
+            <Route
+              element={
+                <PublicRoute
+                  redirectPath="/contacts"
+                  isLoggedIn={isLoggedIn}
+                  restricted
+                />
+              }
+            >
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
 
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute redirectPath="/login" isLoggedIn={isLoggedIn}>
-                <Contacts />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute redirectPath="/login" isLoggedIn={isLoggedIn}>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Container>
       </Suspense>
     </>
   );

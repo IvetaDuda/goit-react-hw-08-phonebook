@@ -1,10 +1,11 @@
 import { HomeLogedIn } from 'components/HomePages';
+// import { Container } from '../Container.styled';
 
 const Home = () => {
   return (
-    <div>
-      <HomeLogedIn />
-    </div>
+    // <Container>
+    <HomeLogedIn />
+    // </Container>
   );
 };
 

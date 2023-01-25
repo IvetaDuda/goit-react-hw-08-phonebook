@@ -5,7 +5,7 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   overflow: auto;
   &::-webkit-scrollbar-button {
     background-image: url(&#39;&#39;);

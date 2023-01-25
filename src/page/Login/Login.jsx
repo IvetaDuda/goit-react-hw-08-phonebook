@@ -8,7 +8,6 @@ import {
   Label,
   Input,
   Button,
-  Container,
   Span,
   Error,
   Img,
@@ -16,6 +15,7 @@ import {
   SignIn,
   LoginContainer,
 } from './Login.styled';
+// import { Container } from '../Container.styled';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -42,40 +42,39 @@ const Login = () => {
   };
 
   return (
-    <Container>
-      <LoginContainer>
-        <Img src={man} alt="man" width="500" />
-
-        <Form autoCapitalize="off" onSubmit={hendleSubmit}>
-          <SignIn>Sign In</SignIn>
-          <Label name="email">
-            <Span>Email</Span>
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={hendleChangeLogin}
-              required
-            />
-          </Label>
-          <Label name="password">
-            <Span>Password</Span>
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={hendleChangePassword}
-              required
-            />
-          </Label>
-          {status.isError === true && (
-            <Error>Oops...Invalid authorization, please try again</Error>
-          )}
-          <Button type="submit">Login</Button>
-          <StyledLink to="/register">Sign Up</StyledLink>
-        </Form>
-      </LoginContainer>
-    </Container>
+    // <Container>
+    <LoginContainer>
+      <Form autoCapitalize="off" onSubmit={hendleSubmit}>
+        <Img src={man} alt="man" />
+        <SignIn>Sign In</SignIn>
+        <Label name="email">
+          <Span>Email</Span>
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={hendleChangeLogin}
+            required
+          />
+        </Label>
+        <Label name="password">
+          <Span>Password</Span>
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={hendleChangePassword}
+            required
+          />
+        </Label>
+        {status.isError === true && (
+          <Error>Oops...Invalid authorization, please try again</Error>
+        )}
+        <Button type="submit">Login</Button>
+        <StyledLink to="/register">Sign Up</StyledLink>
+      </Form>
+    </LoginContainer>
+    // </Container>
   );
 };
 export default Login;

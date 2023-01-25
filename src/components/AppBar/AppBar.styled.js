@@ -17,10 +17,10 @@ export const Header = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-  width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  /* outline: 2px solid red; */
 `;

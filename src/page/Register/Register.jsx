@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useGetSignupMutation } from 'redux/userApi';
 import Woman from '../../image/woman.png';
 import {
-  Container,
   RegisterContainer,
   Form,
   Label,
@@ -14,6 +13,7 @@ import {
   Img,
   StyledLink,
 } from './Register.styled';
+// import { Container } from '../Container.styled';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -43,46 +43,46 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <RegisterContainer>
-        <Img src={Woman} alt="Woman" width="480" />
-        <Form autoCapitalize="off" onSubmit={hendleSubmit}>
-          <SignUp>Sign Up</SignUp>
-          <Label name="name">
-            <Span>Login</Span>
-            <Input
-              type="text"
-              name="name"
-              value={name}
-              onChange={hendleInputChange}
-            />
-          </Label>
-          <Label name="email">
-            <Span>Email</Span>
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={hendleInputChange}
-            />
-          </Label>
-          <Label name="password">
-            <Span>Password</Span>
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={hendleInputChange}
-            />
-          </Label>
-          {status.isError === true && (
-            <Error>Oops... Something went wrong, please try again.</Error>
-          )}
-          <Button type="submit">Sign Up</Button>
-          <StyledLink to="/register">Login</StyledLink>
-        </Form>
-      </RegisterContainer>
-    </Container>
+    // <Container>
+    <RegisterContainer>
+      <Form autoCapitalize="off" onSubmit={hendleSubmit}>
+        <Img src={Woman} alt="Woman" />
+        <SignUp>Sign Up</SignUp>
+        <Label name="name">
+          <Span>Login</Span>
+          <Input
+            type="text"
+            name="name"
+            value={name}
+            onChange={hendleInputChange}
+          />
+        </Label>
+        <Label name="email">
+          <Span>Email</Span>
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={hendleInputChange}
+          />
+        </Label>
+        <Label name="password">
+          <Span>Password</Span>
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={hendleInputChange}
+          />
+        </Label>
+        {status.isError === true && (
+          <Error>Oops... Something went wrong, please try again.</Error>
+        )}
+        <Button type="submit">Sign Up</Button>
+        <StyledLink to="/register">Login</StyledLink>
+      </Form>
+    </RegisterContainer>
+    // </Container>
   );
 };
 export default Register;

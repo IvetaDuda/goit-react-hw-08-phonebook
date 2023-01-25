@@ -20,7 +20,7 @@ const Filter = () => {
         value={filter}
         onChange={hendleFilter}
       ></Input>
-      <Search src={search} alt="search" width="16" />
+      <Search src={search} alt="search" />
     </FilterDiv>
   );
 };
