@@ -132,6 +132,7 @@ export const Img = styled.img`
     position: absolute;
     bottom: 50px;
     left: -250px;
+    z-index: -1;
   }
 
   @media screen and (min-width: 1400px) {
