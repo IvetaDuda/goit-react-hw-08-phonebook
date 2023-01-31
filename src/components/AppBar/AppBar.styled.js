@@ -22,7 +22,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
   @media screen and (min-width: 480px) {
     width: 480px;
   }
