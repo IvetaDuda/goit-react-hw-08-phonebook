@@ -6,14 +6,28 @@ export const Container = styled.div`
   align-items: center;
 `;
 export const Img = styled.img`
-  margin-right: 10px;
+  margin-right: 5px;
+  @media screen and (min-width: 768px) {
+    margin-right: 10px;
+  }
 `;
 
 export const Text = styled.span`
   margin-right: 10px;
   font-size: 18px;
   color: #ffffff;
+  display: flex;
 `;
+export const Welcome = styled.span`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-right: 10px;
+  }
+  @media screen and (min-width: 1400px) {
+  }
+`;
+
 export const Item = styled.span`
   font-size: 20px;
   font-style: italic;

@@ -128,17 +128,17 @@ export const Img = styled.img`
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
-    width: 400px;
+    width: 240px;
     position: absolute;
-    bottom: 50px;
-    left: -250px;
+    bottom: 0px;
+    left: -265px;
     z-index: -1;
   }
 
   @media screen and (min-width: 1400px) {
-    width: 500px;
+    width: 270px;
     position: absolute;
-    bottom: 50px;
-    left: -290px;
+    bottom: 0px;
+    left: -300px;
   }
 `;

@@ -4,10 +4,9 @@ import {
   ManImg,
   WomanImg,
   StyledLink,
-  Hi,
-  Answer,
   ManContainer,
   WomanContainer,
+  People,
 } from './HomeLogedIn.styled';
 import man from '../../../image/man.png';
 import woman from '../../../image/woman.png';
@@ -16,22 +15,20 @@ const HomeLogedIn = () => {
   return (
     <>
       <Title>Phonebook</Title>
-      <ManContainer>
-        <Hi>
+      <People>
+        <ManContainer>
           Hi! <br /> Have you heard about our new app,
           <Subtitle>Phonebook ?</Subtitle>
-        </Hi>
+        </ManContainer>
         <ManImg src={man} alt="man" />
-      </ManContainer>
-      <WomanContainer>
-        <Answer>
+        <WomanContainer>
           To go to the contact list,
           <StyledLink to={`/Login`}> login </StyledLink> to your account.
           <br /> If you are not yet with us, you can
           <StyledLink to={`/register`}> register </StyledLink> here.
-        </Answer>
+        </WomanContainer>
         <WomanImg src={woman} alt="woman" />
-      </WomanContainer>
+      </People>
     </>
   );
 };

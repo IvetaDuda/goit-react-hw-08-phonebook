@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   font: 2vw system-ui;
 
-  /* outline: 2px solid red; */
+  outline: 2px solid red;
 
   @media screen and (min-width: 480px) {
     width: 480px;

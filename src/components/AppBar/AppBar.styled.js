@@ -5,6 +5,7 @@ export const Header = styled.header`
   position: fixed;
   top: 0px;
   left: 0px;
+  padding: 20px 0;
   z-index: 5;
 
   background: linear-gradient(
@@ -21,6 +22,14 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  /* outline: 2px solid red; */
+  outline: 2px solid red;
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 1400px;
+  }
 `;

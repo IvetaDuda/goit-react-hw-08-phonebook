@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const People = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
 export const Title = styled.h1`
   position: absolute;
   white-space: nowrap;
@@ -13,35 +19,30 @@ export const Title = styled.h1`
   clip-path: inset(50%);
   margin: -1px;
 `;
-export const ManContainer = styled.div`
+export const ManImg = styled.img`
   position: absolute;
   bottom: 0;
   left: 0;
-`;
-export const WomanContainer = styled.div`
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-`;
-
-export const ManImg = styled.img`
-  width: 450px;
+  max-width: 170px;
   @media screen and (min-width: 1400px) {
-    width: 550px;
+    max-width: 350px;
   }
 `;
 
 export const WomanImg = styled.img`
-  width: 420px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  max-width: 150px;
   @media screen and (min-width: 1400px) {
-    width: 520px;
+    max-width: 320px;
   }
 `;
 
-export const Hi = styled.div`
+export const ManContainer = styled.div`
   position: absolute;
-  top: 15px;
-  left: 20px;
+  top: 130px;
+  left: 10px;
   width: 160px;
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;
@@ -50,7 +51,7 @@ export const Hi = styled.div`
   font-weight: bold;
   letter-spacing: 0.3em;
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 10px;
   color: #774f38;
   background-color: #ece5ce;
   padding: 10px;
@@ -69,7 +70,7 @@ export const Hi = styled.div`
     text-shadow: 22px 22px #83af9b;
     text-align: left;
     font-size: 55px;
-    width: 55px;
+    width: 45px;
     height: 8px;
     line-height: 30px;
     border-radius: 11px;
@@ -111,30 +112,31 @@ export const Hi = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    top: 35px;
+    top: 150px;
     left: 50px;
-    width: 260px;
+    width: 230px;
     line-height: 1.62;
-    font-size: 14px;
-    padding: 15px;
-    &:after {
-      height: 11px;
-    }
+    font-size: 12px;
+    padding: 10px;
   }
 
   @media screen and (min-width: 1400px) {
-    top: 100px;
-    left: 300px;
+    top: 200px;
+    left: 250px;
     width: 300px;
     line-height: 1.62;
     font-size: 14px;
     padding: 20px;
+    &:after {
+      width: 55px;
+      height: 11px;
+    }
   }
 `;
 
-export const Answer = styled.div`
+export const WomanContainer = styled.div`
   position: absolute;
-  top: -120px;
+  top: 260px;
   right: 30px;
   width: 200px;
   transform: translatey(0px);
@@ -144,7 +146,7 @@ export const Answer = styled.div`
   font-weight: bold;
   letter-spacing: 0.3em;
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 10px;
   color: #774f38;
   background-color: #ece5ce;
   padding: 10px;
@@ -162,8 +164,8 @@ export const Answer = styled.div`
     text-shadow: 22px 22px #83af9b;
     text-align: right;
     font-size: 55px;
-    width: 55px;
-    height: 11px;
+    width: 45px;
+    height: 8px;
     line-height: 30px;
     border-radius: 11px;
     background-color: #ece5ce;
@@ -204,23 +206,23 @@ export const Answer = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    top: -130px;
-    right: 50px;
+    top: 150px;
+    right: 60px;
     width: 300px;
     line-height: 1.62;
     font-size: 14px;
     padding: 15px;
-    &:after {
-      height: 11px;
-    }
   }
 
   @media screen and (min-width: 1400px) {
-    top: 150px;
-    right: 150px;
+    top: 170px;
+    right: 250px;
     width: 320px;
     padding: 30px;
-    position: relative;
+    &:after {
+      width: 55px;
+      height: 11px;
+    }
   }
 `;
 

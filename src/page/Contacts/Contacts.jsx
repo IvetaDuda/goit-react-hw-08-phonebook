@@ -8,14 +8,12 @@ import {
   Contact,
   Form,
 } from './Contacts.stayled';
-// import { Container } from '../Container.styled';
 import ContactList from 'components/ContactList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 
 const Contacts = () => {
   return (
-    // <Container>
     <ContainerContact>
       <Div>
         <Form>
@@ -30,7 +28,6 @@ const Contacts = () => {
       </Div>
       <ToastContainer autoClose={3000} />
     </ContainerContact>
-    // </Container>
   );
 };
 export default Contacts;

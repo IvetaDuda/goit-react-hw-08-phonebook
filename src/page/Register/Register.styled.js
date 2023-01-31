@@ -112,18 +112,18 @@ export const Img = styled.img`
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
-    max-width: 400px;
+    max-width: 200px;
     position: absolute;
     bottom: 50px;
-    right: -220px;
+    right: -240px;
     z-index: -1;
   }
 
   @media screen and (min-width: 1400px) {
-    width: 480px;
+    max-width: 370px;
     position: absolute;
     bottom: 50px;
-    right: -230px;
+    right: -250px;
   }
 `;
 export const StyledLink = styled(NavLink)`
