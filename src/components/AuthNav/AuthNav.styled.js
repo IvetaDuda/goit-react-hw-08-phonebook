@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const StyleLink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 16px;
   color: #ffffff;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:not(:last-child) {
@@ -20,5 +20,8 @@ export const StyleLink = styled(NavLink)`
     color: #e87825;
     transform: scale(1.1);
     border-bottom: 2px solid #e87825;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
   }
 `;

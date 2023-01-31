@@ -6,8 +6,10 @@ export const Container = styled.div`
   align-items: center;
 `;
 export const Img = styled.img`
+  width: 30px;
   margin-right: 5px;
   @media screen and (min-width: 768px) {
+    width: 40px;
     margin-right: 10px;
   }
 `;
@@ -29,10 +31,13 @@ export const Welcome = styled.span`
 `;
 
 export const Item = styled.span`
-  font-size: 20px;
+  font-size: 16px;
   font-style: italic;
   color: #64b7b2;
   border-bottom: 2px solid #64b7b2;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 export const Btn = styled.button`
   cursor: pointer;

@@ -14,7 +14,7 @@ const Logout = () => {
   };
   return (
     <Container>
-      <Img src={user} alt="user" width="40" />
+      <Img src={user} alt="user" />
       <Text>
         <Welcome>Welcome:</Welcome> <Item>{name}</Item>
       </Text>

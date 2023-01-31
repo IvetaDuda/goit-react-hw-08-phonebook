@@ -6,7 +6,7 @@ const Navigation = () => {
   const { isLoggedIn } = useSelector(state => state.users);
   return (
     <Nav>
-      <Image src={phoneCall} alt="phoneCall" width={40} />
+      <Image src={phoneCall} alt="phoneCall" />
       {!isLoggedIn ? (
         <StyleLink to="/">Home</StyleLink>
       ) : (

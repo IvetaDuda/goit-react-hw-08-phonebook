@@ -9,7 +9,7 @@ export const Nav = styled.nav`
 export const StyleLink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 16px;
   color: #ffffff;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
@@ -18,14 +18,22 @@ export const StyleLink = styled(NavLink)`
     transform: scale(1.1);
     color: #e87825;
   }
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 export const Image = styled.img`
-  margin-right: 20px;
+  width: 30px;
+  margin-right: 10px;
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    margin-right: 20px;
+  }
 `;
 export const StyleLinkC = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 16px;
   color: #ffffff;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   animation: link 2s ease-in-out infinite;
@@ -33,5 +41,8 @@ export const StyleLinkC = styled(NavLink)`
     50% {
       transform: scale(1.1);
     }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
   }
 `;
