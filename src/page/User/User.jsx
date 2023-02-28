@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   UserCardAvatar,
-  // UserConfirmation,
+  UserConfirmation,
   UserInfoList,
   UserPhonebook,
 } from 'components/UserData';
@@ -28,7 +28,7 @@ const User = () => {
   });
   return (
     <UserContainer>
-      {/* {!token && <UserConfirmation />} */}
+      {!token && <UserConfirmation />}
       {data && !isFetching && (
         <UserModile>
           <UserInfo>

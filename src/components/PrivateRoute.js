@@ -3,10 +3,10 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 export default function PrivateRoute() {
   const location = useLocation();
-  const { token } = useSelector(state => state.users);
-  // const { isLoggedIn } = useSelector(state => state.users);
+  // const { token } = useSelector(state => state.users);
+  const { isLoggedIn } = useSelector(state => state.users);
 
-  return token ? (
+  return isLoggedIn ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ location }} replace />

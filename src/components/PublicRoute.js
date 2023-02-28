@@ -3,10 +3,10 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 export default function PublicRoute() {
   const location = useLocation();
-  // const { isLoggedIn } = useSelector(state => state.users);
-  const { token } = useSelector(state => state.users);
+  const { isLoggedIn } = useSelector(state => state.users);
+  // const { token } = useSelector(state => state.users);
 
-  return !token ? (
+  return !isLoggedIn ? (
     <Outlet />
   ) : (
     <Navigate to="/user" state={{ location }} replace />
