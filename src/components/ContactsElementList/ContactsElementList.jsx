@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   useDeleteContactMutation,
   usePatchContactMutation,
 } from 'redux/contactsApi';
 import { RotatingLines } from 'react-loader-spinner';
-import Delete from '../../image/delete.svg';
-import Change from '../../image/change.svg';
-import Send from '../../image/send.svg';
-import Cancel from '../../image/cancel.svg';
+import { toast } from 'react-toastify';
+import sprite from '../../image/symbol-defs.svg';
 import {
   Contacts,
   Button,
@@ -17,35 +15,44 @@ import {
   ButtonSend,
   ContactBox,
   Number,
+  SvgChange,
+  SvgDelete,
+  Loading,
 } from './ContactsElementList.styled';
 
-const ContactsElementList = ({ id, name, number }) => {
+const ContactsElementList = ({ _id, name, phone }) => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [contentName, setContentName] = useState(name);
-  const [contentNumber, setContentNumber] = useState(number);
+  const [contentNumber, setContentNumber] = useState(phone);
 
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
+  const [patchContact, { isError, isSuccess, isLoading }] =
+    usePatchContactMutation();
 
-  const [patchContact] = usePatchContactMutation();
+  useEffect(() => {
+    if (isError) {
+      toast.error('Invalid value');
+      setIsUpdate(true);
+    }
+    if (isSuccess) {
+      toast.success(`Contact, successfully change`);
+    }
+  }, [isError, isSuccess]);
 
   const handleUpdateTodo = () => {
     setIsUpdate(true);
   };
   const handleSend = () => {
-    if (contentName.length === 0) {
+    if (contentName.length === 0 || contentNumber.length === 0) {
       return;
     } else {
-      patchContact({ id, name: contentName });
+      patchContact({ _id, name: contentName, phone: contentNumber });
       setIsUpdate(false);
     }
-
-    if (contentNumber.length === 0) {
-      return;
-    } else {
-      patchContact({ id, number: contentNumber });
-      setIsUpdate(false);
-    }
-    setIsUpdate(false);
+  };
+  const handleDeleted = () => {
+    deleteContact(_id);
+    toast.success(`Contact ${name}, delete`);
   };
   return (
     <Contacts>
@@ -62,29 +69,41 @@ const ContactsElementList = ({ id, name, number }) => {
             onChange={e => setContentNumber(e.currentTarget.value)}
           />
           <ButtonSend type="button" onClick={handleSend}>
-            <img src={Send} alt="send" width="20" />
+            <SvgChange>
+              <use href={sprite + '#icon-send'} />
+            </SvgChange>
           </ButtonSend>
           <Button type="button" onClick={() => setIsUpdate(false)}>
-            <img src={Cancel} alt="cancel" width="20" />
+            <SvgChange>
+              <use href={sprite + '#icon-cancel'} />
+            </SvgChange>
           </Button>
         </ChangeBox>
       ) : (
         <>
           <ContactBox>
-            {name}: <Number>{number}</Number>
+            {name}: <Number>{phone}</Number>
           </ContactBox>
           <ButtonChange type="button" onClick={handleUpdateTodo}>
-            {isDeleting ? (
-              <RotatingLines strokeColor="#232323" width="12" />
+            {isLoading ? (
+              <Loading>
+                <RotatingLines strokeColor="#232323" />
+              </Loading>
             ) : (
-              <img src={Change} alt="change" width="20" />
+              <SvgChange>
+                <use href={sprite + '#icon-change'} />
+              </SvgChange>
             )}
           </ButtonChange>
-          <Button onClick={() => deleteContact(id)}>
+          <Button onClick={handleDeleted}>
             {isDeleting ? (
-              <RotatingLines strokeColor="#232323" width="12" />
+              <Loading>
+                <RotatingLines strokeColor="#232323" />
+              </Loading>
             ) : (
-              <img src={Delete} alt="delete" width="30" />
+              <SvgDelete>
+                <use href={sprite + '#icon-delete'} />
+              </SvgDelete>
             )}
           </Button>
         </>

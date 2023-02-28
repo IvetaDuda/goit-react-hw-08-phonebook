@@ -31,7 +31,7 @@ const ContactList = () => {
     <List>
       {renderContacts &&
         contactList.map(contact => (
-          <ContactsElementList key={contact.id} {...contact} />
+          <ContactsElementList key={contact._id} {...contact} />
         ))}
       {isLoading && <Spinner />}
       {errorMessage && <Error> Not Found!</Error>}

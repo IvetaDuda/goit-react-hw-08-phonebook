@@ -7,8 +7,6 @@ export const Container = styled.div`
   margin: 0px auto 0px auto;
   padding: 0;
 
-  font: 2vw system-ui;
-
   /* outline: 2px solid red; */
 
   @media screen and (min-width: 480px) {

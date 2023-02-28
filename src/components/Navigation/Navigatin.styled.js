@@ -10,8 +10,11 @@ export const StyleLink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  color: #ffffff;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  outline: none;
+  color: ${({ theme }) => theme.headerTitle};
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus,
   &:active {
@@ -22,11 +25,14 @@ export const StyleLink = styled(NavLink)`
     font-size: 20px;
   }
 `;
-export const Image = styled.img`
+export const Image = styled.svg`
   width: 30px;
+  height: 30px;
   margin-right: 10px;
+  stroke: ${({ theme }) => theme.headerTitle};
   @media screen and (min-width: 768px) {
     width: 40px;
+    height: 40px;
     margin-right: 20px;
   }
 `;
@@ -34,7 +40,7 @@ export const StyleLinkC = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.headerTitle};
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   animation: link 2s ease-in-out infinite;
   @keyframes link {

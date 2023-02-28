@@ -5,18 +5,19 @@ import {
 } from 'redux/contactsApi';
 import { toast } from 'react-toastify';
 
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
+
 import { Form, Label, Input, Button } from './ContactForm.styled';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('+380');
 
   const { data: contacts } = useGetContactsQuery();
   const [createContact] = useCreateContactMutation();
 
-  const inputNumberId = nanoid(4);
-  const inputNameId = nanoid(4);
+  // const inputNumberId = nanoid(4);
+  // const inputNameId = nanoid(4);
 
   const hendelInputChange = event => {
     const { name, value } = event.target;
@@ -24,8 +25,8 @@ const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
       default:
         return;
@@ -34,36 +35,46 @@ const ContactForm = () => {
 
   const addContact = data => {
     const contactNames = contacts.map(contact => contact.name.toLowerCase());
+    const contactPhone = contacts.map(contact => contact.phone);
 
-    if (!contactNames.includes(data.name.toLowerCase())) {
+    if (
+      !contactNames.includes(data.name.toLowerCase()) &&
+      !contactPhone.includes(data.phone)
+    ) {
       createContact(data);
       reset();
+
       toast.success(`Contact, ${data.name} successfully added`);
     } else {
-      toast.error(`${data.name} is already in contacts.`);
+      if (contactNames.includes(data.name.toLowerCase())) {
+        toast.error(`${data.name}  is already in contacts.`);
+      } else {
+        toast.error(` ${data.phone} is already in contacts.`);
+      }
     }
   };
 
   const hendelSubmit = event => {
     event.preventDefault();
     const contact = {
-      id: nanoid(4),
+      // _id: nanoid(4),
       name,
-      number,
+      phone,
     };
     addContact(contact);
   };
 
   const reset = () => {
     setName('');
-    setNumber('');
+    setPhone('+380');
   };
 
   return (
     <Form onSubmit={hendelSubmit}>
-      <Label htmlFor={inputNameId}>Name</Label>
+      {/* <Label htmlFor={inputNameId}>Name</Label> */}
+      <Label>Name</Label>
       <Input
-        id={inputNameId}
+        // id={inputNameId}
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -72,14 +83,17 @@ const ContactForm = () => {
         onChange={hendelInputChange}
         required
       />
-      <Label htmlFor={inputNumberId}>Number</Label>
+      {/* <Label htmlFor={inputNumberId}>Number</Label> */}
+      <Label>Number</Label>
       <Input
-        id={inputNumberId}
+        // id={inputNumberId}
         type="tel"
-        name="number"
+        name="phone"
+        // pattern="/^\+380\d{9}$/"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        value={number}
+        title="Phone phone must be digits and can contain spaces, dashes, parentheses and can start with +"
+        value={phone}
+        placeholder="+380"
         onChange={hendelInputChange}
         required
       />

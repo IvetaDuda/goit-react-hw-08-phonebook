@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getFilter, changeFilter } from 'redux/contactsSlice';
 
 import { FilterDiv, Label, Input, Search } from './Filter.styled';
-import search from '../../image/search.svg';
+import sprite from '../../image/symbol-defs.svg';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,9 @@ const Filter = () => {
         value={filter}
         onChange={hendleFilter}
       ></Input>
-      <Search src={search} alt="search" />
+      <Search>
+        <use href={sprite + '#icon-search'} />
+      </Search>
     </FilterDiv>
   );
 };

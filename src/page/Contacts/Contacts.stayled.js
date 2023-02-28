@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import Background from '../../image/background.jpg';
 
-export const ContainerContact = styled.div`
+export const ContactContainer = styled.div`
   padding: 140px 20px 20px 20px;
   @media screen and (min-width: 1400px) {
     padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
-export const Div = styled.div`
+export const ContactDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,22 +24,13 @@ export const Div = styled.div`
   background-image: url(${Background});
   background-position: center;
   background-size: cover;
+  font: 2vw system-ui;
+  box-shadow: 13px 13px 5px -4px rgba(0, 0, 0, 0.39);
   @media screen and (min-width: 768px) {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 5px;
-    margin: 0 auto;
-    padding-bottom: 20px;
   }
 
   @media screen and (min-width: 1400px) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 1000px;
     height: 500px;
     flex-direction: row;

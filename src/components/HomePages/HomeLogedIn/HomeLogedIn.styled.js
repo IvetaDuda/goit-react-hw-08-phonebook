@@ -57,7 +57,7 @@ export const ManContainer = styled.div`
   padding: 10px;
   border-radius: 11px;
   position: relative;
-  box-shadow: 20px 20px #83af9b;
+  box-shadow: ${({ theme }) => theme.homeShadow};
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   &:after {
     transform: translatey(0px);
@@ -67,7 +67,7 @@ export const ManContainer = styled.div`
     -webkit-text-stroke: 0.5px #c8c8a9;
     -webkit-text-fill-color: #ece5ce;
     border: 1px solid #c8c8a9;
-    text-shadow: 22px 22px #83af9b;
+    text-shadow: ${({ theme }) => theme.homeAfterShadow};
     text-align: left;
     font-size: 55px;
     width: 45px;
@@ -79,7 +79,8 @@ export const ManContainer = styled.div`
     display: block;
     bottom: -30px;
     left: 0;
-    box-shadow: 22px 22px #83af9b;
+    box-shadow: ${({ theme }) => theme.homeAfterShadow};
+
     z-index: -2;
   }
 
@@ -151,7 +152,7 @@ export const WomanContainer = styled.div`
   background-color: #ece5ce;
   padding: 10px;
   border-radius: 11px;
-  box-shadow: 20px 20px #83af9b;
+  box-shadow: ${({ theme }) => theme.homeShadow};
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   &:after {
     transform: translatey(0px);
@@ -161,7 +162,8 @@ export const WomanContainer = styled.div`
     -webkit-text-stroke: 0.5px #c8c8a9;
     -webkit-text-fill-color: #ece5ce;
     border: 1px solid #c8c8a9;
-    text-shadow: 22px 22px #83af9b;
+    text-shadow: ${({ theme }) => theme.homeAfterShadow};
+
     text-align: right;
     font-size: 55px;
     width: 45px;
@@ -173,7 +175,7 @@ export const WomanContainer = styled.div`
     display: block;
     bottom: -30px;
     right: 0;
-    box-shadow: 22px 22px #83af9b;
+    box-shadow: ${({ theme }) => theme.homeAfterShadow};
     z-index: -2;
   }
 
@@ -248,9 +250,15 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 2px solid #ecb10a;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (min-width: 768px) {
     font-size: 20px;
     letter-spacing: 0.2em;
     line-height: 1.62;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.homeLinkHover};
+    border-bottom: ${({ theme }) => theme.homeLinkBorderHover};
   }
 `;

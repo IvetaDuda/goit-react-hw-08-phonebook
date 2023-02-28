@@ -42,18 +42,17 @@ export const Input = styled.input`
     padding: 5px 5px 5px 30px;
   }
 `;
-export const Search = styled.img`
+export const Search = styled.svg`
   width: 12px;
+  height: 12px;
   position: absolute;
   top: 55px;
   left: 4px;
   @media screen and (min-width: 768px) {
     width: 14px;
-    top: 53px;
     left: 8px;
   }
   @media screen and (min-width: 1400px) {
     width: 16px;
-    top: 51px;
   }
 `;
