@@ -23,7 +23,7 @@ const LogoutInfo = () => {
   const { data } = useGetCurrentUserQuery(token, { skip: !token });
 
   const avatarImg = data.avatarURL
-    ? `http://localhost:5000/${data.avatarURL}`
+    ? `https://phonebook-server-h3zp.onrender.com/${data.avatarURL}`
     : user;
   return (
     <Container>

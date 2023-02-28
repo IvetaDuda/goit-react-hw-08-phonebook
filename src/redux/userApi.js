@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api/auth/users',
+    baseUrl: 'https://phonebook-server-h3zp.onrender.com/api/auth/users',
     prepareHeaders: (headers, { getState }) => {
       const token = getState()?.users.token;
       if (token) {

@@ -12,5 +12,5 @@ export const Confirmation = styled.div`
 export const ConfirmationTitle = styled.h2`
   font-weight: 400;
   font-size: 32px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.userConfirmation};
 `;

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const contactsApi = createApi({
   reducerPath: 'contacts',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api',
+    baseUrl: 'https://phonebook-server-h3zp.onrender.com/api',
     prepareHeaders: (headers, { getState }) => {
       const token = getState()?.users.token;
       if (token) {

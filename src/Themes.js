@@ -42,6 +42,8 @@ export const lightTheme = {
 
   notFoundColor: '#000000',
   notFoundShadow: '2px 2px 2px #ffffff',
+
+  userConfirmation: '#2b2b2f',
 };
 export const darkTheme = {
   changeTheme: 'dark',
@@ -87,4 +89,6 @@ export const darkTheme = {
 
   notFoundColor: '#ffffff',
   notFoundShadow: '2px 2px 2px #000000',
+
+  userConfirmation: '#ffffff',
 };

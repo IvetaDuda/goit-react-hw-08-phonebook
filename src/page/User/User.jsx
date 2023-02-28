@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   UserCardAvatar,
-  UserConfirmation,
+  // UserConfirmation,
   UserInfoList,
   UserPhonebook,
 } from 'components/UserData';
@@ -23,16 +23,12 @@ const User = () => {
     state => state.users
   );
 
-  // const [, status] = useGetUserLoginMutation();
-  // console.log(status);
-
   const { data, isFetching } = useGetCurrentUserQuery(token, {
     skip: !token,
   });
-
   return (
     <UserContainer>
-      {!data && <UserConfirmation />}
+      {/* {!token && <UserConfirmation />} */}
       {data && !isFetching && (
         <UserModile>
           <UserInfo>

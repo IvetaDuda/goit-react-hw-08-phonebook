@@ -15,6 +15,8 @@ import {
   BtnText,
 } from './RegisterForm.styled';
 import sprite from '../../../image/symbol-defs.svg';
+import { useSelector } from 'react-redux';
+import { UserConfirmation } from 'components/UserData';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -23,6 +25,9 @@ const RegisterForm = () => {
   const [passwordShow, setPasswordShow] = useState(false);
 
   const [getSignup, status] = useGetSignupMutation();
+
+  const { token } = useSelector(state => state.users);
+  console.log(token);
 
   const hendleSubmit = e => {
     e.preventDefault();
@@ -46,55 +51,61 @@ const RegisterForm = () => {
   const togglePassword = () => setPasswordShow(prevState => !prevState);
 
   return (
-    <Form autoCapitalize="off" onSubmit={hendleSubmit}>
-      <Img src={Woman} alt="Woman" />
-      <SignUp>Sign Up</SignUp>
-      <Label name="name">
-        <Span>Login</Span>
-        <Input
-          type="text"
-          name="name"
-          value={name}
-          onChange={hendleInputChange}
-        />
-      </Label>
-      <Label name="email">
-        <Span>Email</Span>
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          onChange={hendleInputChange}
-        />
-      </Label>
-      <Label name="password">
-        <Span>Password</Span>
-        <Input
-          type={passwordShow ? 'text' : 'password'}
-          name="password"
-          value={password}
-          onChange={hendleInputChange}
-        />
-        <BtnEye type="button" onClick={togglePassword}>
-          {passwordShow ? (
-            <svg width="20" height="20">
-              <use href={sprite + '#icon-eye'} />
-            </svg>
-          ) : (
-            <svg width="20" height="20">
-              <use href={sprite + '#icon-eye-blocked'} />
-            </svg>
+    <>
+      {token === undefined ? (
+        <UserConfirmation />
+      ) : (
+        <Form autoCapitalize="off" onSubmit={hendleSubmit}>
+          <Img src={Woman} alt="Woman" />
+          <SignUp>Sign Up</SignUp>
+          <Label name="name">
+            <Span>Login</Span>
+            <Input
+              type="text"
+              name="name"
+              value={name}
+              onChange={hendleInputChange}
+            />
+          </Label>
+          <Label name="email">
+            <Span>Email</Span>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={hendleInputChange}
+            />
+          </Label>
+          <Label name="password">
+            <Span>Password</Span>
+            <Input
+              type={passwordShow ? 'text' : 'password'}
+              name="password"
+              value={password}
+              onChange={hendleInputChange}
+            />
+            <BtnEye type="button" onClick={togglePassword}>
+              {passwordShow ? (
+                <svg width="20" height="20">
+                  <use href={sprite + '#icon-eye'} />
+                </svg>
+              ) : (
+                <svg width="20" height="20">
+                  <use href={sprite + '#icon-eye-blocked'} />
+                </svg>
+              )}
+            </BtnEye>
+          </Label>
+          {status.isError === true && (
+            <Error>Oops... Something went wrong, please try again.</Error>
           )}
-        </BtnEye>
-      </Label>
-      {status.isError === true && (
-        <Error>Oops... Something went wrong, please try again.</Error>
+          <Button type="submit">
+            <BtnText>Register</BtnText>
+          </Button>
+          <StyledLink to="/login">Login</StyledLink>
+        </Form>
       )}
-      <Button type="submit">
-        <BtnText>Register</BtnText>
-      </Button>
-      <StyledLink to="/login">Login</StyledLink>
-    </Form>
+    </>
   );
 };
 export default RegisterForm;
