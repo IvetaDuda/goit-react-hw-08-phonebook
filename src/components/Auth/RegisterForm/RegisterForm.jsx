@@ -15,7 +15,7 @@ import {
   BtnText,
 } from './RegisterForm.styled';
 import sprite from '../../../image/symbol-defs.svg';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // import { UserConfirmation } from 'components/UserData';
 
 const RegisterForm = () => {
